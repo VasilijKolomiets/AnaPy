@@ -215,14 +215,14 @@ def get_rps_id_by(
 
 def get_if_street_building_surname_combo_id(
     rps_receivers_id=None,
-    rps_postcervices_id=None,
+    rps_postservices_id=None,
     rps_streets_id=None,
     building_to_check=None,
     name_to_check=None,
 ):
     """
     `receiver_postservice_street`  (rps)  fields:
-        `id_r_p_street`, `rps_receivers_id`, `rps_postcervices_id`, `rps_streets_id`
+        `id_r_p_street`, `rps_receivers_id`, `rps_postservices_id`, `rps_streets_id`
 
     returns:
         - None   if not found or
@@ -230,10 +230,10 @@ def get_if_street_building_surname_combo_id(
     """
 
     selected_by_token = select_fields_from_table(
-        fields='id_receivers, id_r_p_street, rps_receivers_id, rps_postcervices_id, rps_streets_id, receivers.surname, receivers.building',
+        fields='id_receivers, id_r_p_street, rps_receivers_id, rps_postservices_id, rps_streets_id, receivers.surname, receivers.building',
         table='receivers LEFT JOIN receiver_postservice_street ON id_receivers=rps_receivers_id',
         where_condition=F"""
-        rps_postcervices_id = {rps_postcervices_id} and rps_streets_id = {rps_streets_id}
+        rps_postservices_id = {rps_postservices_id} and rps_streets_id = {rps_streets_id}
         and receivers.surname = '{name_to_check}' and receivers.building = '{building_to_check}'
         """
     )
@@ -274,7 +274,7 @@ def create_parcels_by_api(postman: ua_posts_api.Postman, state_pars: dict):
 
         SELECT `receiver_postservice_street`.`id_r_p_street`,
             `receiver_postservice_street`.`rps_receivers_id`,
-            `receiver_postservice_street`.`rps_postcervices_id`,
+            `receiver_postservice_street`.`rps_postservices_id`,
             `receiver_postservice_street`.`rps_streets_id`
         FROM `postman`.`receiver_postservice_street`;
     """
@@ -448,7 +448,7 @@ def create_parcels_by_api(postman: ua_posts_api.Postman, state_pars: dict):
         street_name, street_token = select_fields_from_table(  # TODO: CRUD
             fields=' street_name, street_token ',
             table="""receiver_postservice_street t1
-            INNER JOIN streets t2
+             JOIN streets t2
                 ON t1.rps_streets_id = t2.id_streets
             """,
             where_condition=F' id_r_p_street = {waybills_rps_id}'
@@ -483,8 +483,6 @@ def create_parcels_by_api(postman: ua_posts_api.Postman, state_pars: dict):
         #    create parcel with api
         #
         resp_code, result = postman.parcels.create(**kwargs)    # TODO:  split procedure here
-        #
-        #    change addr_common
         #
         # parcelID
         print(resp_code, result)

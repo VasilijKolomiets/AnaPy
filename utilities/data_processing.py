@@ -208,7 +208,8 @@ def apointments_processing(path_ro_xlsx: Path, sheet_name='ALL_Адрес'):
                                    ),
                                    )
     # add new column 'items_in_parcel':
-    df_apointments.loc[:, 'items_in_parcel'] = df_apointments.items_total / df_apointments.parcels
+    df_apointments.loc[:, 'items_in_parcel'] = (
+        df_apointments.items_total / df_apointments.parcels).round(3)
     # TODO: DRY
     # df_apointments.items_in_parcel.replace('nan', np.nan, inplace=True)
     # df_apointments.dropna(subset=['items_in_parcel', ], inplace=True)
@@ -216,13 +217,12 @@ def apointments_processing(path_ro_xlsx: Path, sheet_name='ALL_Адрес'):
     # pdf file name for each sticker saving
     df_apointments.loc[:, 'pdf_name'] = (
         df_apointments.delivery_id.astype(str) + '_'
-        + df_apointments.receivers_id.astype(str) + '_'
         + df_apointments.item_id_in_delivery.astype(str) + '_'
+        + df_apointments.items_in_parcel.astype(str) + '_'
         + df_apointments.parcels.astype(str) + '_'
-        + df_apointments.items_total.astype(str)
-        + '.pdf'
+        + df_apointments.items_total.astype(str) + '_'
+        + df_apointments.receivers_id.astype(str) + '_'
     )
-
     return (df_apointments.delivery_id.unique()[0], df_apointments)
 
 
@@ -424,7 +424,7 @@ def get_stickers_by_api(postman: ua_posts_api.Postman, df_addr,
             continue
 
         # print(F'row.parcelID for print.sticker100 ------>{row.parcelID}')
-        code, pdf_bytes = postman.print.sticker100(parcels_IDs_list=[row.parcelID, ])
+        code, pdf_bytes = postman.to_print.sticker100(parcels_IDs_list=[row.parcelID, ])
         if code == 200:
             with open(folder_path / work_out_pdf_name(firm_name, row.parcelID, delivery_firm),
                       'wb') as f:
@@ -432,11 +432,11 @@ def get_stickers_by_api(postman: ua_posts_api.Postman, df_addr,
                 f.write(pdf_bytes)
 
 
-def group_stickers_into_pdfs(df_addrs,
-                             firm_name: str = 'oschad', delivery_firm: str = 'meest',
-                             subfolder_to_read_from: str = '_work_pdf',
-                             folder_to_write_in: str = '_resulting_pdfs',
-                             ):
+def _group_stickers_into_pdfs(df_addrs,
+                              firm_name: str = 'oschad', delivery_firm: str = 'meest',
+                              subfolder_to_read_from: str = '_work_pdf',
+                              folder_to_write_in: str = '_resulting_pdfs',
+                              ):
 
     here_path = Path('.').resolve().parent
 

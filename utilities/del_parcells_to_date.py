@@ -9,7 +9,7 @@ import ua_posts_api
 
 postman_del = ua_posts_api.Postman(credentials['Meest'])
 
-date = '19.01.2022'
+date = '20.01.2022'
 code, resp = postman_del.parcels.get_all_on_date(date)
 
 parcels_cout, deleted_parcels_count = len(resp), 0

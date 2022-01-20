@@ -102,5 +102,6 @@ def f_create_tickets(postman, state_pars: dict):
 
     #  create waybiils in postserice API
     create_parcels_by_api(postman, state_pars)
-    #  save postservice's  waybiil's tokens into DB - table 'contract_waybills'
-    ...
+    # TODO: split save   create_parcels_by_api postservice's  waybiil's tokens into DB - table 'contract_waybills'
+    # ??? now saving in  create_parcels_by_api - it is not good !!!
+    print("tickets done...")

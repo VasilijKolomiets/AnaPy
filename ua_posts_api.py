@@ -36,7 +36,7 @@ class PostServiceLight(abc.ABC):
                                    'branch_id',
                                    ])
     Parcels = namedtuple('Parcels', ['create', 'get_all_on_date', 'delete_by_id'])
-    Registers = namedtuple('Registers', ['create', 'edit', 'delete'])
+    Register = namedtuple('Register', ['create_pick_up', 'edit_pick_up', 'delete_pick_up'])
     Print = namedtuple('Print', ['sticker100', 'sticker100_A4', 'registers', 'declarations'])
     Tracking = namedtuple('Tracking', ['method', ])
 
@@ -71,6 +71,12 @@ class PostServiceLight(abc.ABC):
             sticker100_A4=self._print_sticker100_A4,   # друк у pdf-файл sticker100 форматами А4
             registers=None,
             declarations=None,
+        )
+
+        self.register = self.__class__.Registers(
+            create_pick_up=None,
+            edit_pick_up=None,
+            delete_pick_up=None,
         )
 
         response = self._do_auth()
@@ -153,6 +159,15 @@ class Postman(PostServiceLight):  # metaclass=Singleton
     def __init__(self, credentials: dict) -> None:
         ##### TODO: rework
         super().__init__(credentials)
+        self.sender = {
+            "phone":  "+38050-421-1558",
+            "name": "Васина Лариса",
+            "service": "Door",
+            "addressID": "d3d482e3-ed9f-11df-b61a-00215aee3ebe",
+            "building": "10А",
+            "floor": 1,
+            "notation": "Типографія Арт-Прес, м. Дніпро",
+        }
 
     # =============================================================================================
     # AUTH functions block
@@ -758,6 +773,33 @@ class Postman(PostServiceLight):  # metaclass=Singleton
 
         # return response.status_code, content_result
         return response.status_code, content_result
+
+    def _create_pickup_register(self,
+                                expected_pick_date=dict(
+                                    date=),
+                                sender=False,
+                                parcels_IDs_list: list = []):
+        """
+
+        """
+        json_body = {
+            "contractID": self.contract_id,
+            "payType": "noncash",
+            "expectedPickUpDate": expected_pick_date,
+            "sender": sender if sender else self.sender,
+
+        }
+        response = requests.post(
+            "/".join([self.url, 'registerBranch']),
+            headers=self.headers,
+            json=json_body,
+        )
+        self.auth_response_code = response.status_code
+        content_result = response.content   # not content['result']  - bc of stream result in
+
+        # return response.status_code, content_result
+        return response.status_code, content_result
+
         #
         # MAGIC functions block
         #
