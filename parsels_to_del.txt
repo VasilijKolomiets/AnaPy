@@ -1,0 +1,324 @@
+?? 'AgentID': ''
+??  HAVE TO DELETE THIS SAND-PARSELLS
+??  COD != 600  - do not work with 600 value
+??  STICKER PRINTING  -  HOW DO IT BETTER?
+??  print_sticker100A4
+
+(200, {'parcelID': '9b92d989-5805-11ec-80e4-000c29800ae7', 
+'AgentID': '', 'barCode': '714-0335372', 'costServices': 56.25, 'estimatedDeliveryDate': '13.12.2021'})
+
+(200, {'parcelID': '76292111-5805-11ec-80e4-000c29800ae7', 'AgentID': '',
+ 'barCode': '714-0335255', 'costServices': 56.25, 'estimatedDeliveryDate': '13.12.2021'})
+
+
+(200, {'parcelID': '0ddcc7c8-5806-11ec-80e4-000c29800ae7', 'AgentID': '',
+ 'barCode': '714-0335694', 'costServices': 58.75, 'estimatedDeliveryDate': '13.12.2021'})
+
+(200, {'parcelID': 'acf08cad-5806-11ec-80e4-000c29800ae7', 'AgentID': '', 
+'barCode': '714-0336174', 'costServices': 58.75, 'estimatedDeliveryDate': '13.12.2021'})
+
+(200, {'parcelID': 'e4115ff9-5806-11ec-80e4-000c29800ae7', 'AgentID': '', 
+'barCode': '714-0336361', 'costServices': 58.75, 'estimatedDeliveryDate': '13.12.2021'})
+
+(200, {'parcelID': 'ce44f085-5807-11ec-80e4-000c29800ae7', 'AgentID': '', 
+'barCode': '714-0337104', 'costServices': 58.75, 'estimatedDeliveryDate': '13.12.2021'})
+
+--
+
+f74bc8e2-5817-11ec-80e4-000c29800ae7
+04d1b81e-5818-11ec-80e4-000c29800ae7
+04d1b82a-5818-11ec-80e4-000c29800ae7
+17405cd4-5818-11ec-80e4-000c29800ae7
+
+
+21-12-09: +5 годин
+21-12-10: +6 години
+21-12-11: +6 годин
+21-12-11: +7 
+
+400 
+200 {'parcelID': '3be9fcfb-5b2a-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0553898', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+200 {'parcelID': '3be9fcfc-5b2a-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0553899', 'costServices': 0, 'estimatedDeliveryDate': '17.12.2021'}
+200 {'parcelID': '3be9fd01-5b2a-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0553900', 'costServices': 0, 'estimatedDeliveryDate': '13.12.2021'}
+400 
+400 
+400 
+200 {'parcelID': '3be9fd02-5b2a-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0553901', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+400 {}
+200 {'parcelID': '3be9fd06-5b2a-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0553902', 'costServices': 0, 'estimatedDeliveryDate': '15.12.2021'}
+200 {'parcelID': '3be9fd08-5b2a-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0553903', 'costServices': 0, 'estimatedDeliveryDate': '15.12.2021'}
+400 
+200 {'parcelID': '423f4783-5b2a-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0553904', 'costServices': 0, 'estimatedDeliveryDate': '15.12.2021'}
+400 
+200 {'parcelID': '423f4786-5b2a-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0553905', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+200 {'parcelID': '423f4787-5b2a-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0553906', 'costServices': 100.33, 'estimatedDeliveryDate': '15.12.2021'}
+400 
+400 
+400 
+200 {'parcelID': '423f4788-5b2a-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0553907', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+400 
+400 
+400 
+400 
+400 
+200 {'parcelID': '423f4789-5b2a-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0553908', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+400 
+400 
+400 
+400 {}
+400 {}
+400 
+400 
+400 
+400 
+200 {'parcelID': '423f4790-5b2a-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0553912', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+200 {'parcelID': '423f4791-5b2a-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0553913', 'costServices': 0, 'estimatedDeliveryDate': '13.12.2021'}
+
+ {'placesItems': [{'weight': 0.46, 'insurance': 60.0, 'quantity': 1}, {'weight': 3.49, 'insurance': 1403.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': ' Гацанюк Петр', 'phone': '095-215-33-10', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '09100', 'addressID': '', 'building': ' 101', 'service': 'Door'}}
+400 
+
+ {'placesItems': [], 'receiver': {'name': 'Ромась Оксана', 'phone': '050-449-38-40', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '21029', 'addressID': '743fdc85-e0d2-11df-9b37-00215aee3ebe', 'building': ' 35А', 'service': 'Door'}}
+200 {'parcelID': 'fa9a86c1-5b2c-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554262', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [], 'receiver': {'name': 'Боднарчук Олег', 'phone': '050-434-73-79', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '31200', 'addressID': '89ce9b12-eda3-11df-b61a-00215aee3ebe', 'building': ' 104', 'service': 'Door'}}
+200 {'parcelID': 'fa9a86c3-5b2c-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554264', 'costServices': 0, 'estimatedDeliveryDate': '17.12.2021'}
+
+ {'placesItems': [{'weight': 0.69, 'insurance': 90.0, 'quantity': 1}, {'weight': 4.56, 'insurance': 1833.33, 'quantity': 3}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 1.2, 'insurance': 200.0, 'quantity': 1}], 'receiver': {'name': 'Коваленко Дмитро', 'phone': '050-353-44-11', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '49026', 'addressID': 'f08f5984-1402-11e0-8677-00215aee3ebe', 'building': '29', 'service': 'Door', 'flat': 'офіс 207'}}
+400 
+
+ {'placesItems': [{'weight': 1.08, 'insurance': 200.0, 'quantity': 1}], 'receiver': {'name': 'Шулик Тарас', 'phone': '095-909-69-57', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': nan, 'addressID': '', 'building': '29-а', 'service': 'Door'}}
+400 
+
+ {'placesItems': [{'weight': 2.29, 'insurance': 300.0, 'quantity': 1}, {'weight': 5.74, 'insurance': 750.0, 'quantity': 2}, {'weight': 2.71, 'insurance': 500.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': 'Горкуша Валентина', 'phone': '050-332-41-92', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '10014', 'addressID': '', 'building': ' 4/2', 'service': 'Door'}}
+400 
+
+ {'placesItems': [{'weight': 6.88, 'insurance': 900.0, 'quantity': 8}, {'weight': 4.72, 'insurance': 1900.0, 'quantity': 10}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.9, 'insurance': 150.0, 'quantity': 1}], 'receiver': {'name': 'Кримчар Ірина', 'phone': '050-417-16-10', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '69006', 'addressID': '27c7cdcd-e0d3-11df-9b37-00215aee3ebe', 'building': ' 26а', 'service': 'Door'}}
+400 
+
+ {'placesItems': [], 'receiver': {'name': 'Ігор Дутчак', 'phone': '050-388-43-39', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '76009', 'addressID': '476d44ee-e0d3-11df-9b37-00215aee3ebe', 'building': ' 172а', 'service': 'Door'}}
+200 {'parcelID': '00df5206-5b2d-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554265', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [], 'receiver': {'name': 'Зарудная Елена', 'phone': '050-449-99-84', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '03057', 'addressID': '6e23d41f-e0d2-11df-9b37-00215aee3ebe', 'building': ' 31/33', 'service': 'Door'}}
+200 {'parcelID': '00df5208-5b2d-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554266', 'costServices': 0, 'estimatedDeliveryDate': '15.12.2021'}
+
+ {'placesItems': [], 'receiver': {'name': 'Кіренкін Віталій ', 'phone': '050-681-93-61', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '02218', 'addressID': 'fdfe109b-0b7a-11ea-80e7-1c98ec135261', 'building': ' 27', 'service': 'Door'}}
+200 {'parcelID': '00df520a-5b2d-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554267', 'costServices': 0, 'estimatedDeliveryDate': '15.12.2021'}
+
+ {'placesItems': [], 'receiver': {'name': 'Кіренкін Віталій ', 'phone': '050-681-93-61', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '02218', 'addressID': 'fdfe109b-0b7a-11ea-80e7-1c98ec135261', 'building': ' 27', 'service': 'Door'}}
+200 {'parcelID': '00df520b-5b2d-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554268', 'costServices': 0, 'estimatedDeliveryDate': '15.12.2021'}
+
+ {'placesItems': [{'weight': 2.29, 'insurance': 300.0, 'quantity': 1}, {'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': 2.71, 'insurance': 500.0, 'quantity': 1}, {'weight': 4.97, 'insurance': 2000.0, 'quantity': 3}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}, {'weight': 0.45, 'insurance': 75.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': 'Савельєв Андрій', 'phone': '099-041-56-96', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': nan, 'addressID': '', 'building': ' 1', 'service': 'Door'}}
+400 
+
+ {'placesItems': [], 'receiver': {'name': 'Кіренкін Віталій ', 'phone': '050-681-93-61', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '02218', 'addressID': 'fdfe109b-0b7a-11ea-80e7-1c98ec135261', 'building': ' 27', 'service': 'Door'}}
+200 {'parcelID': '00df520e-5b2d-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554270', 'costServices': 0, 'estimatedDeliveryDate': '15.12.2021'}
+
+ {'placesItems': [{'weight': 4.13, 'insurance': 540.0, 'quantity': 2}, {'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': 'Літвінова Наталія', 'phone': '050-415-91-07', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '84331', 'addressID': 'd13b921a-e0d2-11df-9b37-00215aee3ebe', 'building': ' 19 \xa0', 'service': 'Door'}}
+400 
+
+ {'placesItems': [], 'receiver': {'name': 'Малісевич Юрій', 'phone': '050-332-48-66', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '47004', 'addressID': '2631d3e1-18ca-11e0-82d7-00215aee3ebe', 'building': ' 39', 'service': 'Door'}}
+200 {'parcelID': '00df5210-5b2d-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554271', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [{'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': 4.14, 'insurance': 1666.67, 'quantity': 3}, {'weight': 5.42, 'insurance': 1000.0, 'quantity': 2}], 'receiver': {'name': 'Фарина Олена', 'phone': '096-727-95-59', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '50000', 'addressID': 'da41995e-ed9f-11df-b61a-00215aee3ebe', 'building': ' 11В ', 'service': 'Door'}}
+200 {'parcelID': '00df5212-5b2d-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554272', 'costServices': 100.33, 'estimatedDeliveryDate': '15.12.2021'}
+
+ {'placesItems': [{'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': 2.98, 'insurance': 1200.0, 'quantity': 2}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': 'Юрченко Светлана', 'phone': '095-227-27-64', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '25000', 'addressID': '', 'building': '23', 'service': 'Door'}}
+400 
+
+ {'placesItems': [{'weight': 4.59, 'insurance': 600.0, 'quantity': 2}, {'weight': 2.29, 'insurance': 300.0, 'quantity': 1}, {'weight': 4.97, 'insurance': 2000.0, 'quantity': 2}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': 'Ліпчик Сергій', 'phone': '093-529-20-59', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '43007', 'addressID': 'bac96f1a-ed9f-11df-b61a-00215aee3ebe', 'building': ' 14', 'service': 'Door'}}
+400 
+
+ {'placesItems': [{'weight': 6.63, 'insurance': 866.67, 'quantity': 9}, {'weight': 2.29, 'insurance': 300.0, 'quantity': 1}, {'weight': 2.71, 'insurance': 500.0, 'quantity': 1}, {'weight': 4.35, 'insurance': 1750.0, 'quantity': 4}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 1.2, 'insurance': 200.0, 'quantity': 1}], 'receiver': {'name': 'Шулик Тарас', 'phone': '095-909-69-57', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '79021', 'addressID': 'd46451f4-e0d3-11df-9b37-00215aee3ebe', 'building': ' 29А', 'service': 'Door'}}
+400 
+
+ {'placesItems': [], 'receiver': {'name': 'Шулик Тарас', 'phone': '095-909-69-57', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '79021', 'addressID': 'd46451f4-e0d3-11df-9b37-00215aee3ebe', 'building': ' 29А', 'service': 'Door'}}
+200 {'parcelID': '00df5219-5b2d-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554274', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [{'weight': 6.88, 'insurance': 900.0, 'quantity': 1}, {'weight': 5.42, 'insurance': 1000.0, 'quantity': 2}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.6, 'insurance': 100.0, 'quantity': 1}], 'receiver': {'name': 'Сергей Бубнов', 'phone': '096-451-72-98', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '72315', 'addressID': '345814af-e0d3-11df-9b37-00215aee3ebe', 'building': '36', 'service': 'Door'}}
+400 
+
+ {'placesItems': [{'weight': 3.73, 'insurance': 1500.0, 'quantity': 2}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.9, 'insurance': 150.0, 'quantity': 1}], 'receiver': {'name': 'Джулинська Світлана', 'phone': '066-160-71-04', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '36023', 'addressID': '', 'building': ' 9', 'service': 'Door'}}
+400 
+
+ {'placesItems': [{'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': 0.81, 'insurance': 150.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.15, 'insurance': 25.0, 'quantity': 1}], 'receiver': {'name': 'Быков Андрей', 'phone': '050-407-26-99', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '41500', 'addressID': '', 'building': ' 16', 'service': 'Door'}}
+400 
+
+ {'placesItems': [{'weight': 4.59, 'insurance': 600.0, 'quantity': 2}, {'weight': 3.27, 'insurance': 1316.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': 'Олексюк Володимир', 'phone': '050-388-45-12', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '33013', 'addressID': '5715992c-e0d4-11df-9b37-00215aee3ebe', 'building': ' 6', 'service': 'Door'}}
+400 
+
+ {'placesItems': [{'weight': 0.46, 'insurance': 60.0, 'quantity': 1}, {'weight': 4.59, 'insurance': 600.0, 'quantity': 1}, {'weight': 6.77, 'insurance': 1250.0, 'quantity': 4}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.15, 'insurance': 25.0, 'quantity': 1}], 'receiver': {'name': 'Загорулько Ганна Олександрівна', 'phone': '050-531-55-11', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '40005', 'addressID': '964b279b-9e58-11e0-82d0-003048d2b473', 'building': ' 19/2', 'service': 'Door'}}
+400 
+
+ {'placesItems': [], 'receiver': {'name': 'Закришка Іван', 'phone': '050-377-18-28', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '48101', 'addressID': '94e0aaaf-e0d4-11df-9b37-00215aee3ebe', 'building': ' 30', 'service': 'Door'}}
+200 {'parcelID': '00df521a-5b2d-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554275', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [{'weight': 5.74, 'insurance': 750.0, 'quantity': 4}, {'weight': 4.59, 'insurance': 600.0, 'quantity': 1}, {'weight': 4.14, 'insurance': 1666.67, 'quantity': 3}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.15, 'insurance': 25.0, 'quantity': 1}], 'receiver': {'name': 'Нестерак Олена', 'phone': '096-976-16-82', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '46016', 'addressID': '', 'building': ' 1', 'service': 'Door'}}
+400 
+
+ {'placesItems': [{'weight': 1.08, 'insurance': 200.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.15, 'insurance': 25.0, 'quantity': 1}], 'receiver': {'name': 'Бартусяк Ірина', 'phone': '050-371-32-33', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '82200', 'addressID': 'da910927-e0d3-11df-9b37-00215aee3ebe', 'building': ' 5', 'service': 'Door'}}
+400 
+
+ {'placesItems': [{'weight': 0.23, 'insurance': 30.0, 'quantity': 1}, {'weight': 4.33, 'insurance': 800.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': 'Яловенко Тетяна', 'phone': '063-470-20-14', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '08500', 'addressID': '', 'building': ' 5', 'service': 'Door'}}
+400 
+
+ {'placesItems': [], 'receiver': {'name': 'Говор Денис', 'phone': '050-415-91-31', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '61093', 'addressID': '', 'building': '50', 'service': 'Door'}}
+400 {}
+
+ {'placesItems': [], 'receiver': {'name': 'Говор Денис', 'phone': '050-415-91-31', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '61093', 'addressID': '', 'building': '50', 'service': 'Door'}}
+400 {}
+
+ {'placesItems': [{'weight': 4.59, 'insurance': 600.0, 'quantity': 1}, {'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': 4.48, 'insurance': 1800.0, 'quantity': 4}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.45, 'insurance': 75.0, 'quantity': 1}], 'receiver': {'name': 'Чумаченко Віталій', 'phone': '050-811-79-18', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '73003', 'addressID': '', 'building': '12', 'service': 'Door', 'floor': 2, 'flat': 'оф. 6 '}}
+400 
+
+ {'placesItems': [{'weight': 5.16, 'insurance': 675.0, 'quantity': 2}, {'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': 2.71, 'insurance': 500.0, 'quantity': 1}, {'weight': 1.72, 'insurance': 693.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.45, 'insurance': 75.0, 'quantity': 1}], 'receiver': {'name': 'Костур Ніна', 'phone': '050-417-16-38', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '29001', 'addressID': '2fe95d2e-0489-11ea-80e7-1c98ec135261', 'building': ' 8', 'service': 'Door'}}
+400 
+
+ {'placesItems': [{'weight': 6.56, 'insurance': 857.14, 'quantity': 14}, {'weight': 5.74, 'insurance': 750.0, 'quantity': 2}, {'weight': 3.28, 'insurance': 1320.0, 'quantity': 2}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 1.2, 'insurance': 200.0, 'quantity': 1}], 'receiver': {'name': 'Денисенко Лариса', 'phone': '050-412-45-08', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '18001', 'addressID': 'f23174fb-2317-11ea-80e7-1c98ec135261', 'building': ' 411', 'service': 'Door'}}
+400 
+
+ {'placesItems': [{'weight': 4.59, 'insurance': 600.0, 'quantity': 2}, {'weight': 2.29, 'insurance': 300.0, 'quantity': 1}, {'weight': 2.98, 'insurance': 1200.0, 'quantity': 2}, {'weight': nan, 'insurance': 0.0, 'quantity': 1}, {'weight': 0.15, 'insurance': 25.0, 'quantity': 1}], 'receiver': {'name': 'Охрімовська Вікторія', 'phone': '050-374-10-69', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '58001', 'addressID': '40be0e4c-0551-11ea-80e7-1c98ec135261', 'building': '246', 'service': 'Door', 'floor': 2}}
+400 
+
+ {'placesItems': [], 'receiver': {'name': 'Корчинський Антон', 'phone': '050-377-23-72', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '48501', 'addressID': 'eaae69d1-eda2-11df-b61a-00215aee3ebe', 'building': ' 5/4', 'service': 'Door'}}
+200 {'parcelID': '0736ff09-5b2d-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554278', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [{'weight': 0.46, 'insurance': 60.0, 'quantity': 1}, {'weight': 3.49, 'insurance': 1403.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': ' Гацанюк Петр', 'phone': '095-215-33-10', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '09100', 'addressID': '', 'building': ' 101', 'service': 'Door'}}
+400 {}
+
+ {'placesItems': [], 'receiver': {'name': 'Ромась Оксана', 'phone': '050-449-38-40', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '21029', 'addressID': '743fdc85-e0d2-11df-9b37-00215aee3ebe', 'building': ' 35А', 'service': 'Door'}}
+200 {'parcelID': '9a16da17-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554779', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [], 'receiver': {'name': 'Боднарчук Олег', 'phone': '050-434-73-79', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '31200', 'addressID': '89ce9b12-eda3-11df-b61a-00215aee3ebe', 'building': ' 104', 'service': 'Door'}}
+200 {'parcelID': '9a16da18-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554780', 'costServices': 0, 'estimatedDeliveryDate': '17.12.2021'}
+
+ {'placesItems': [{'weight': 0.69, 'insurance': 90.0, 'quantity': 1}, {'weight': 4.56, 'insurance': 1833.33, 'quantity': 3}, {'weight': 1.2, 'insurance': 200.0, 'quantity': 1}], 'receiver': {'name': 'Коваленко Дмитро', 'phone': '050-353-44-11', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '49026', 'addressID': 'f08f5984-1402-11e0-8677-00215aee3ebe', 'building': '29', 'service': 'Door', 'flat': 'офіс 207'}}
+200 {'parcelID': 'a177634e-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554781', 'costServices': 133.92, 'estimatedDeliveryDate': '13.12.2021'}
+
+ {'placesItems': [{'weight': 1.08, 'insurance': 200.0, 'quantity': 1}], 'receiver': {'name': 'Шулик Тарас', 'phone': '095-909-69-57', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': nan, 'addressID': '', 'building': '29-а', 'service': 'Door'}}
+400 
+
+ {'placesItems': [{'weight': 2.29, 'insurance': 300.0, 'quantity': 1}, {'weight': 5.74, 'insurance': 750.0, 'quantity': 2}, {'weight': 2.71, 'insurance': 500.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': 'Горкуша Валентина', 'phone': '050-332-41-92', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '10014', 'addressID': '', 'building': ' 4/2', 'service': 'Door'}}
+400 {}
+
+ {'placesItems': [{'weight': 6.88, 'insurance': 900.0, 'quantity': 8}, {'weight': 4.72, 'insurance': 1900.0, 'quantity': 10}, {'weight': 0.9, 'insurance': 150.0, 'quantity': 1}], 'receiver': {'name': 'Кримчар Ірина', 'phone': '050-417-16-10', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '69006', 'addressID': '27c7cdcd-e0d3-11df-9b37-00215aee3ebe', 'building': ' 26а', 'service': 'Door'}}
+200 {'parcelID': 'a1776350-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554783', 'costServices': 104.75, 'estimatedDeliveryDate': '15.12.2021'}
+
+ {'placesItems': [], 'receiver': {'name': 'Ігор Дутчак', 'phone': '050-388-43-39', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '76009', 'addressID': '476d44ee-e0d3-11df-9b37-00215aee3ebe', 'building': ' 172а', 'service': 'Door'}}
+200 {'parcelID': 'a1776351-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554784', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [], 'receiver': {'name': 'Зарудная Елена', 'phone': '050-449-99-84', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '03057', 'addressID': '6e23d41f-e0d2-11df-9b37-00215aee3ebe', 'building': ' 31/33', 'service': 'Door'}}
+200 {'parcelID': 'a1776352-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554785', 'costServices': 0, 'estimatedDeliveryDate': '15.12.2021'}
+
+ {'placesItems': [], 'receiver': {'name': 'Кіренкін Віталій ', 'phone': '050-681-93-61', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '02218', 'addressID': 'fdfe109b-0b7a-11ea-80e7-1c98ec135261', 'building': ' 27', 'service': 'Door'}}
+200 {'parcelID': 'a1776353-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554786', 'costServices': 0, 'estimatedDeliveryDate': '15.12.2021'}
+
+ {'placesItems': [], 'receiver': {'name': 'Кіренкін Віталій ', 'phone': '050-681-93-61', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '02218', 'addressID': 'fdfe109b-0b7a-11ea-80e7-1c98ec135261', 'building': ' 27', 'service': 'Door'}}
+200 {'parcelID': 'a1776354-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554787', 'costServices': 0, 'estimatedDeliveryDate': '15.12.2021'}
+
+ {'placesItems': [{'weight': 2.29, 'insurance': 300.0, 'quantity': 1}, {'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': 2.71, 'insurance': 500.0, 'quantity': 1}, {'weight': 4.97, 'insurance': 2000.0, 'quantity': 3}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}, {'weight': 0.45, 'insurance': 75.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': 'Савельєв Андрій', 'phone': '099-041-56-96', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': nan, 'addressID': '', 'building': ' 1', 'service': 'Door'}}
+400 
+
+ {'placesItems': [], 'receiver': {'name': 'Кіренкін Віталій ', 'phone': '050-681-93-61', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '02218', 'addressID': 'fdfe109b-0b7a-11ea-80e7-1c98ec135261', 'building': ' 27', 'service': 'Door'}}
+200 {'parcelID': 'a1776356-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554788', 'costServices': 0, 'estimatedDeliveryDate': '15.12.2021'}
+
+ {'placesItems': [{'weight': 4.13, 'insurance': 540.0, 'quantity': 2}, {'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': 'Літвінова Наталія', 'phone': '050-415-91-07', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '84331', 'addressID': 'd13b921a-e0d2-11df-9b37-00215aee3ebe', 'building': ' 19 \xa0', 'service': 'Door'}}
+200 {'parcelID': 'a1776358-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554789', 'costServices': 138.45, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [], 'receiver': {'name': 'Малісевич Юрій', 'phone': '050-332-48-66', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '47004', 'addressID': '2631d3e1-18ca-11e0-82d7-00215aee3ebe', 'building': ' 39', 'service': 'Door'}}
+200 {'parcelID': 'a177635a-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554790', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [{'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': 4.14, 'insurance': 1666.67, 'quantity': 3}, {'weight': 5.42, 'insurance': 1000.0, 'quantity': 2}], 'receiver': {'name': 'Фарина Олена', 'phone': '096-727-95-59', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '50000', 'addressID': 'da41995e-ed9f-11df-b61a-00215aee3ebe', 'building': ' 11В ', 'service': 'Door'}}
+200 {'parcelID': 'a89293be-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554791', 'costServices': 100.33, 'estimatedDeliveryDate': '15.12.2021'}
+
+ {'placesItems': [{'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': 2.98, 'insurance': 1200.0, 'quantity': 2}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': 'Юрченко Светлана', 'phone': '095-227-27-64', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '25000', 'addressID': '', 'building': '23', 'service': 'Door'}}
+400 {}
+
+ {'placesItems': [{'weight': 4.59, 'insurance': 600.0, 'quantity': 2}, {'weight': 2.29, 'insurance': 300.0, 'quantity': 1}, {'weight': 4.97, 'insurance': 2000.0, 'quantity': 2}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': 'Ліпчик Сергій', 'phone': '093-529-20-59', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '43007', 'addressID': 'bac96f1a-ed9f-11df-b61a-00215aee3ebe', 'building': ' 14', 'service': 'Door'}}
+200 {'parcelID': 'a89293c1-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554792', 'costServices': 160.75, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [{'weight': 6.63, 'insurance': 866.67, 'quantity': 9}, {'weight': 2.29, 'insurance': 300.0, 'quantity': 1}, {'weight': 2.71, 'insurance': 500.0, 'quantity': 1}, {'weight': 4.35, 'insurance': 1750.0, 'quantity': 4}, {'weight': 1.2, 'insurance': 200.0, 'quantity': 1}], 'receiver': {'name': 'Шулик Тарас', 'phone': '095-909-69-57', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '79021', 'addressID': 'd46451f4-e0d3-11df-9b37-00215aee3ebe', 'building': ' 29А', 'service': 'Door'}}
+200 {'parcelID': 'a89293c4-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554794', 'costServices': 186.83, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [], 'receiver': {'name': 'Шулик Тарас', 'phone': '095-909-69-57', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '79021', 'addressID': 'd46451f4-e0d3-11df-9b37-00215aee3ebe', 'building': ' 29А', 'service': 'Door'}}
+200 {'parcelID': 'a89293c5-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554795', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [{'weight': 6.88, 'insurance': 900.0, 'quantity': 1}, {'weight': 5.42, 'insurance': 1000.0, 'quantity': 2}, {'weight': 0.6, 'insurance': 100.0, 'quantity': 1}], 'receiver': {'name': 'Сергей Бубнов', 'phone': '096-451-72-98', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '72315', 'addressID': '345814af-e0d3-11df-9b37-00215aee3ebe', 'building': '36', 'service': 'Door'}}
+200 {'parcelID': 'a89293c6-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554796', 'costServices': 159.5, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [{'weight': 3.73, 'insurance': 1500.0, 'quantity': 2}, {'weight': 0.9, 'insurance': 150.0, 'quantity': 1}], 'receiver': {'name': 'Джулинська Світлана', 'phone': '066-160-71-04', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '36023', 'addressID': '', 'building': ' 9', 'service': 'Door'}}
+400 {}
+
+ {'placesItems': [{'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': 0.81, 'insurance': 150.0, 'quantity': 1}, {'weight': 0.15, 'insurance': 25.0, 'quantity': 1}], 'receiver': {'name': 'Быков Андрей', 'phone': '050-407-26-99', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '41500', 'addressID': '', 'building': ' 16', 'service': 'Door'}}
+400 {}
+
+ {'placesItems': [{'weight': 4.59, 'insurance': 600.0, 'quantity': 2}, {'weight': 3.27, 'insurance': 1316.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': 'Олексюк Володимир', 'phone': '050-388-45-12', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '33013', 'addressID': '5715992c-e0d4-11df-9b37-00215aee3ebe', 'building': ' 6', 'service': 'Door'}}
+200 {'parcelID': 'b01dd152-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554798', 'costServices': 144.58, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [{'weight': 0.46, 'insurance': 60.0, 'quantity': 1}, {'weight': 4.59, 'insurance': 600.0, 'quantity': 1}, {'weight': 6.77, 'insurance': 1250.0, 'quantity': 4}, {'weight': 0.15, 'insurance': 25.0, 'quantity': 1}], 'receiver': {'name': 'Загорулько Ганна Олександрівна', 'phone': '050-531-55-11', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '40005', 'addressID': '964b279b-9e58-11e0-82d0-003048d2b473', 'building': ' 19/2', 'service': 'Door'}}
+200 {'parcelID': 'b01dd154-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554800', 'costServices': 159.25, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [], 'receiver': {'name': 'Закришка Іван', 'phone': '050-377-18-28', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '48101', 'addressID': '94e0aaaf-e0d4-11df-9b37-00215aee3ebe', 'building': ' 30', 'service': 'Door'}}
+200 {'parcelID': 'b01dd155-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554801', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [{'weight': 5.74, 'insurance': 750.0, 'quantity': 4}, {'weight': 4.59, 'insurance': 600.0, 'quantity': 1}, {'weight': 4.14, 'insurance': 1666.67, 'quantity': 3}, {'weight': 0.15, 'insurance': 25.0, 'quantity': 1}], 'receiver': {'name': 'Нестерак Олена', 'phone': '096-976-16-82', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '46016', 'addressID': '', 'building': ' 1', 'service': 'Door'}}
+400 {}
+
+ {'placesItems': [{'weight': 1.08, 'insurance': 200.0, 'quantity': 1}, {'weight': 0.15, 'insurance': 25.0, 'quantity': 1}], 'receiver': {'name': 'Бартусяк Ірина', 'phone': '050-371-32-33', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '82200', 'addressID': 'da910927-e0d3-11df-9b37-00215aee3ebe', 'building': ' 5', 'service': 'Door'}}
+200 {'parcelID': 'b01dd157-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554802', 'costServices': 127.5, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [{'weight': 0.23, 'insurance': 30.0, 'quantity': 1}, {'weight': 4.33, 'insurance': 800.0, 'quantity': 1}, {'weight': 0.3, 'insurance': 50.0, 'quantity': 1}], 'receiver': {'name': 'Яловенко Тетяна', 'phone': '063-470-20-14', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '08500', 'addressID': '', 'building': ' 5', 'service': 'Door'}}
+400 {}
+
+ {'placesItems': [], 'receiver': {'name': 'Говор Денис', 'phone': '050-415-91-31', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '61093', 'addressID': '', 'building': '50', 'service': 'Door'}}
+400 {}
+
+ {'placesItems': [], 'receiver': {'name': 'Говор Денис', 'phone': '050-415-91-31', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '61093', 'addressID': '', 'building': '50', 'service': 'Door'}}
+400 {}
+
+ {'placesItems': [{'weight': 4.59, 'insurance': 600.0, 'quantity': 1}, {'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': 4.48, 'insurance': 1800.0, 'quantity': 4}, {'weight': 0.45, 'insurance': 75.0, 'quantity': 1}], 'receiver': {'name': 'Чумаченко Віталій', 'phone': '050-811-79-18', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '73003', 'addressID': '', 'building': '12', 'service': 'Door', 'floor': 2, 'flat': 'оф. 6 '}}
+400 {}
+
+ {'placesItems': [{'weight': 5.16, 'insurance': 675.0, 'quantity': 2}, {'weight': 1.15, 'insurance': 150.0, 'quantity': 1}, {'weight': 2.71, 'insurance': 500.0, 'quantity': 1}, {'weight': 1.72, 'insurance': 693.0, 'quantity': 1}, {'weight': 0.45, 'insurance': 75.0, 'quantity': 1}], 'receiver': {'name': 'Костур Ніна', 'phone': '050-417-16-38', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '29001', 'addressID': '2fe95d2e-0489-11ea-80e7-1c98ec135261', 'building': ' 8', 'service': 'Door'}}
+200 {'parcelID': 'b683cd58-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554805', 'costServices': 156.34, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [{'weight': 6.56, 'insurance': 857.14, 'quantity': 14}, {'weight': 5.74, 'insurance': 750.0, 'quantity': 2}, {'weight': 3.28, 'insurance': 1320.0, 'quantity': 2}, {'weight': 1.2, 'insurance': 200.0, 'quantity': 1}], 'receiver': {'name': 'Денисенко Лариса', 'phone': '050-412-45-08', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '18001', 'addressID': 'f23174fb-2317-11ea-80e7-1c98ec135261', 'building': ' 411', 'service': 'Door'}}
+200 {'parcelID': 'b683cd5a-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554806', 'costServices': 184.39, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [{'weight': 4.59, 'insurance': 600.0, 'quantity': 2}, {'weight': 2.29, 'insurance': 300.0, 'quantity': 1}, {'weight': 2.98, 'insurance': 1200.0, 'quantity': 2}, {'weight': 0.15, 'insurance': 25.0, 'quantity': 1}], 'receiver': {'name': 'Охрімовська Вікторія', 'phone': '050-374-10-69', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '58001', 'addressID': '40be0e4c-0551-11ea-80e7-1c98ec135261', 'building': '246', 'service': 'Door', 'floor': 2}}
+200 {'parcelID': 'b683cd5c-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554807', 'costServices': 145.5, 'estimatedDeliveryDate': '16.12.2021'}
+
+ {'placesItems': [], 'receiver': {'name': 'Корчинський Антон', 'phone': '050-377-23-72', 'countryID': 'c35b6195-4ea3-11de-8591-001d600938f8', 'zipCode': '48501', 'addressID': 'eaae69d1-eda2-11df-b61a-00215aee3ebe', 'building': ' 5/4', 'service': 'Door'}}
+200 {'parcelID': 'b683cd5d-5b30-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-0554808', 'costServices': 0, 'estimatedDeliveryDate': '16.12.2021'}
+
+
+
+----------------------------- 2022  ---------------
+
+200 {'parcelID': '5a675387-7933-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2630161', 'costServices': 159.5, 'estimatedDeliveryDate': '21.01.2022'}
+200 {'parcelID': 'bb6edc11-7933-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2630346', 'costServices': 159.8, 'estimatedDeliveryDate': '21.01.2022'}
+200 {'parcelID': 'e65286b5-7933-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2630492', 'costServices': 159.54, 'estimatedDeliveryDate': '21.01.2022'}
+200 {'parcelID': '115c881e-7934-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2630623', 'costServices': 158.97, 'estimatedDeliveryDate': '21.01.2022'}
+200 {'parcelID': '29e24496-7934-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2630703', 'costServices': 171.22, 'estimatedDeliveryDate': '21.01.2022'}
+200 {'parcelID': '5b35a499-7934-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2630838', 'costServices': 100.84, 'estimatedDeliveryDate': '21.01.2022'}
+200 {'parcelID': '6d2f3fb4-7934-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2630904', 'costServices': 102.24, 'estimatedDeliveryDate': '21.01.2022'}
+200 {'parcelID': '917fa33a-7934-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2631007', 'costServices': 97.92, 'estimatedDeliveryDate': '21.01.2022'}
+200 {'parcelID': 'a98bf5d8-7934-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2631086', 'costServices': 100.85, 'estimatedDeliveryDate': '24.01.2022'}
+200 {'parcelID': 'b5b368e8-7934-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2631141', 'costServices': 100.4, 'estimatedDeliveryDate': '24.01.2022'}
+200 {'parcelID': 'ce66a41b-7934-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2631214', 'costServices': 99.39, 'estimatedDeliveryDate': '24.01.2022'}
+200 {'parcelID': 'e0840282-7934-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2631265', 'costServices': 99.39, 'estimatedDeliveryDate': '24.01.2022'}
+200 {'parcelID': 'f2be2d00-7934-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2631304', 'costServices': 99.47, 'estimatedDeliveryDate': '25.01.2022'}
+200 {'parcelID': 'fec90304-7934-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2631348', 'costServices': 99.3, 'estimatedDeliveryDate': '25.01.2022'}
+200 {'parcelID': '10fc10aa-7935-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2631410', 'costServices': 98.74, 'estimatedDeliveryDate': '21.01.2022'}
+200 {'parcelID': '420091f4-7935-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2631571', 'costServices': 98.21, 'estimatedDeliveryDate': '21.01.2022'}
+200 {'parcelID': '53f7f8ff-7935-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2631632', 'costServices': 154.66, 'estimatedDeliveryDate': '21.01.2022'}
+...
+200 {'parcelID': '78295f45-7935-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2631780', 'costServices': 153.97, 'estimatedDeliveryDate': '24.01.2022'}
+200 {'parcelID': '7e430e77-7935-11ec-80e4-000c29800ae7', 'AgentID': '', 'barCode': '714-2631796', 'costServices': 152.75, 'estimatedDeliveryDate': '26.01.2022'}
+
+
+
+
+
+
+
+
