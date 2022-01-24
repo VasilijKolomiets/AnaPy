@@ -11,6 +11,7 @@ Created on Wed Jan 12 15:09:59 2022
 # =============================================================================
 
 # from pathlib import Path
+from tkinter.messagebox import showinfo
 
 import winsound
 
@@ -104,4 +105,7 @@ def f_create_tickets(postman, state_pars: dict):
     create_parcels_by_api(postman, state_pars)
     # TODO: split save   create_parcels_by_api postservice's  waybiil's tokens into DB - table 'contract_waybills'
     # ??? now saving in  create_parcels_by_api - it is not good !!!
-    print("tickets done...")
+    showinfo(
+        title='Створення Експрес-накладних:',
+        message="Завершено!"
+    )

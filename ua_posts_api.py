@@ -12,9 +12,16 @@ import json
 
 from pprint import pprint
 
-from datetime import datetime as dt, timedelta
+from datetime import datetime as dt, timedelta, date
 
 from settings import credentials
+
+
+def tomorrow() -> str:
+    today = date.today()
+    tomorrow = today + timedelta(days=1)
+    print(tomorrow.strftime('%d.%m.%Y'))
+    return tomorrow.strftime('%d.%m.%Y')
 
 
 class Singleton(type):
@@ -36,7 +43,7 @@ class PostServiceLight(abc.ABC):
                                    'branch_id',
                                    ])
     Parcels = namedtuple('Parcels', ['create', 'get_all_on_date', 'delete_by_id'])
-    Register = namedtuple('Register', ['create_pick_up', 'edit_pick_up', 'delete_pick_up'])
+    Registers = namedtuple('Registers', ['create_pick_up', 'edit_pick_up', 'delete_pick_up'])
     Print = namedtuple('Print', ['sticker100', 'sticker100_A4', 'registers', 'declarations'])
     Tracking = namedtuple('Tracking', ['method', ])
 
@@ -776,7 +783,9 @@ class Postman(PostServiceLight):  # metaclass=Singleton
 
     def _create_pickup_register(self,
                                 expected_pick_date=dict(
-                                    date=),
+                                    date=tomorrow(),  # "20.01.2022"
+                                    timeFrom="15:00",
+                                    timeTo="18:00"),
                                 sender=False,
                                 parcels_IDs_list: list = []):
         """

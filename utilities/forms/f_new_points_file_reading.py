@@ -185,10 +185,11 @@ def unclear_addrs_resolving(df_addrs: pd.DataFrame):
         for el in addr_row.AddressID:
             # el_dict = json.loads(el)
             street_list_for_combolist.append(r"|".join(
-                [el['cityDescr']['descrUA'],
-                 el['addressDescr']['descrUA'],
-                 el['addressID']
-                 ])
+                [
+                    el['cityDescr']['descrUA'],
+                    el['addressDescr']['descrUA'],
+                    el['addressID']
+                ])
             )
 
         pprint(addr_row.AddressID)

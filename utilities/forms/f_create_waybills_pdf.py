@@ -8,9 +8,11 @@ Created on Wed Jan 19 17:15:56 2022
 from pathlib import Path
 
 from PyPDF2 import PdfFileReader, PdfFileWriter
-import base64
+# import base64
 
-from utilities.utils import txt_to_image_EN, image_to_pdf
+from tkinter.messagebox import showinfo
+
+import utilities.utils as utils
 
 from model import select_fields_from_table, update_many, get_ordered_parcells_by_waybill
 
@@ -23,7 +25,9 @@ def group_stickers_into_pdfs(curr_contracts_id,
                              subfolder_to_read_from: str = '_work_pdf',
                              folder_to_write_in: str = '_resulting_pdfs',
                              ):
-
+    # read more heare: https://realpython.com/pdf-python/
+    # https://www.blog.pythonlibrary.org/2018/06/07/an-intro-to-pypdf2/
+    #
     here_path = Path('.').resolve()   # .parent
 
     contract_waybills = select_fields_from_table(
@@ -58,31 +62,81 @@ def group_stickers_into_pdfs(curr_contracts_id,
                 pdf_writer.write(output_file)
 
 
-def subscribe_pdfs_stickers(df_common,
-                            firm_name: str = 'oschad', delivery_firm: str = 'meest',
+def subscribe_pdfs_stickers(curr_contracts_id,
                             subfolder_to_read_from: str = '_resulting_pdfs',
                             ):
-    # , text_to_sticker
+
     # take files '*.pdf' from folder
-    here_path = Path('.').resolve().parent
+    here_path = Path('.').resolve()  # .parent
     for pdf_file in (here_path / subfolder_to_read_from).iterdir():
-        # pick item_id & addr_id from file name
+
         if pdf_file.suffix != ".pdf":
             continue
-        item_id, addr_id = (int(el) for el in pdf_file.name.split('_')[1:3])
-        # get text to print from df_commmon
-        text_to_print = df_common.query(
-            'item_id==@item_id and addr_id==@addr_id'
-        ).text_to_sticker.values[0]
+        if int(pdf_file.name.split('_')[1]) != curr_contracts_id:
+            continue
+
+        # pick item_id & addr_id from file name
+        # take '1_2_22.0_3_66_366' from 'printme_1_2_22.0_3_66_366__pumb_Meest_83_':
+        search_text = "_".join(pdf_file.name.split('_')[1:7])
+        # get text to print from 'patcels' table:
+        text_to_print = select_fields_from_table(
+            fields=' text_to_sticker ',
+            table='parcells',
+
+            where_condition=F"""INSTR(pacells_pdf_file, '{search_text}') > 0"""
+
+        )[0][0]
         # create image from text
         utils.txt_to_image_EN(text_to_print, pdf_file.with_suffix('.png'))
         # insert image with text pdf 'page' times in "right places"
         utils.image_to_pdf(pdf_filename=pdf_file, image_f_name=pdf_file.with_suffix('.png'))
 
 
-def f_create_waybills_pdf(postman, state_pars: dict,
-                          folder_path: str = '_work_pdf',
-                          ):
+def merge_pdfs_by_item_id(
+    curr_contracts_id,
+    subfolder_to_read_from: str = '_resulting_pdfs',
+):
+
+    from itertools import groupby
+    from copy import deepcopy               # for progress bar only
+    import tkinter as tk                    # for progress bar only
+    from tkinter import ttk                 # for progress bar only
+
+    def item_file_name(file: Path):
+        """Skip file name middle part"""
+        filename_parts = file.name.split("_")
+        return "_".join(filename_parts[:3] + filename_parts[7:-2] + filename_parts[-1:])
+
+    program_path = Path('.').resolve()  # .parent.parent.resolve()
+    files_in_folder = (program_path / subfolder_to_read_from).iterdir()
+    files_to_group = [
+        file for file in files_in_folder
+        if (file.suffix == ".pdf") and (int(file.name.split('_')[1]) == curr_contracts_id)
+    ]
+
+    total_files_num = len(files_to_group)   # for progress bar only
+    root = tk.Tk()                          # for progress bar only
+    progress = ttk.Progressbar(             # for progress bar only
+        root, orient=tk.HORIZONTAL, length=total_files_num, mode='determinate'
+    )
+    progress.pack(pady=10)                  # for progress bar only
+
+    files_merged = 0                        # for progress bar only
+    for key, group in groupby(files_to_group, key=item_file_name):
+        files_in_the_group = len(list(deepcopy(group)))  # for progress bar only
+        utils.merge_pdfs(group, program_path / subfolder_to_read_from / key)
+        files_merged += files_in_the_group  # for progress bar only
+        progress['value'] = files_merged    # for progress bar only
+        # Keep updating the master object to redraw the progress bar
+        root.update()                       # for progress bar only
+
+    root.mainloop()
+
+
+def f_create_waybills_pdf(
+    postman, state_pars: dict,
+        folder_path: str = '_work_pdf',
+):
 
     path_to_save = Path('.').resolve() / folder_path  # .parent
     curr_contracts_id = state_pars['delivery_contract']['id_delivery_contract']
@@ -140,3 +194,24 @@ def f_create_waybills_pdf(postman, state_pars: dict,
                 f.write(pdf_bytes)
 
     group_stickers_into_pdfs(curr_contracts_id)
+
+    showinfo(
+        title='Створення pdf:',
+        message="""
+        Завершено!
+        Підписуємо ЕН...
+        """
+    )
+
+    subscribe_pdfs_stickers(curr_contracts_id)
+
+    merge_pdfs_by_item_id(curr_contracts_id)
+
+    showinfo(
+        title='Створення файлів для друку:',
+        message="Завершено!"
+    )
+
+
+if __name__ == "__main__":
+    merge_pdfs_by_item_id(curr_contracts_id=6)
