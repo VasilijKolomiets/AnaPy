@@ -115,7 +115,7 @@ def add_row_to_handbook_nd_get_added_id(
         table_in='cities',
 
 
-):
+) -> int:  # or None )
     """ `cities` fields:
         `id_cities`, `postservice_id`, `city_name`, `city_token`, `citiescol`
 
@@ -395,7 +395,17 @@ def create_parcels_by_api(postman: ua_posts_api.Postman, state_pars: dict):
                 where_condition='is_active'
         ):
     """
+
+    def meest_mult(post_service_id: int, parcells_num: int, packs_num: int):
+        if post_service_id == 1:  # MeestExpress
+            return 1 if parcells_num == 1 else packs_num
+        elif post_service_id == 2:  # NovaPoshta
+            return 1
+        else:
+            ...
+
     curr_contracts_id = state_pars['delivery_contract']['id_delivery_contract']
+    post_service_id = state_pars['post_service']['id_postcervices']
 
     waybills_for_contract = select_fields_from_table(
         fields='id_waybills, waybills_receivers_id, waybills_rps_id, total_weight ',
@@ -409,6 +419,7 @@ def create_parcels_by_api(postman: ua_posts_api.Postman, state_pars: dict):
         kwargs = dict(placesItems=[], receiver=None, weight=total_weight)
 
         parcells_in_waybill = get_ordered_parcells_by_waybill(id_waybills)
+        parcells_num = len(parcells_in_waybill)  # !!! fucked MeestExpress formula
         for parcell in parcells_in_waybill:
             (
                 id_parcells,
@@ -433,9 +444,15 @@ def create_parcels_by_api(postman: ua_posts_api.Postman, state_pars: dict):
             kwargs["placesItems"].append(
                 {
                     "quantity": packs_number,
-                    "weight": round(weight_calculated, 3),
-                    "volume": round(parcell_volume_calculated, 3),
-                    "insurance": round(cost_calculated, 2),     # can be ommited
+                    "weight": round(
+                        weight_calculated *
+                        meest_mult(post_service_id, parcells_num, packs_number), 3),
+                    "volume": round(
+                        parcell_volume_calculated *
+                        meest_mult(post_service_id, parcells_num, packs_number), 3),
+                    "insurance": round(
+                        cost_calculated *                       # can be ommited
+                        meest_mult(post_service_id, parcells_num, packs_number), 2),
                     "length": length,                           # can be ommited
                     "width":  width,                            # can be ommited
                     "height": int(height_calculated),           # can be ommited

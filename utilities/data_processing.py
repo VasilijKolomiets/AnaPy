@@ -28,7 +28,7 @@ import ua_posts_api
 def addresses_processing(path_ro_xlsx: Path, sheet_name='АП'):
     """Process the addresses table."""
     df_addrs = pd.read_excel(path_ro_xlsx, sheet_name=sheet_name,
-                             header=1,
+                             header=0,
                              usecols=list(range(11)),
                              dtype=dict(N=int,
                                         addr_id=int,
@@ -44,13 +44,17 @@ def addresses_processing(path_ro_xlsx: Path, sheet_name='АП'):
                              # skiprows=0,
                              )  # .dropna()
 
-    df_addrs.город = df_addrs.город.str.replace("'", "`", regex=False)
-    df_addrs.улица = df_addrs.улица.str.replace("'", "`", regex=False)
-    df_addrs.город = df_addrs.город.str.replace("’", "`", regex=False)
-    df_addrs.улица = df_addrs.улица.str.replace("’", "`", regex=False)
+    df_addrs.zipCode = df_addrs.zipCode.str.strip()
+    df_addrs.город = df_addrs.город.str.strip()
+    df_addrs.улица = df_addrs.улица.str.strip()
+    df_addrs.ФИО = df_addrs.ФИО.str.strip()
+    df_addrs.телефон = df_addrs.телефон.str.strip()
 
-    df_addrs.улица = df_addrs.улица.str.replace(")", " ", regex=False)
-    df_addrs.улица = df_addrs.улица.str.replace("(", " ", regex=False)
+    df_addrs.город = df_addrs.город.str.replace(r"['’]", "`")
+    df_addrs.улица = df_addrs.улица.str.replace(r"['’]", "`")
+    df_addrs.ФИО = df_addrs.улица.str.replace(r"['’]", "`")
+
+    df_addrs.улица = df_addrs.улица.str.replace(r"[()]", "_", regex=False)
 
     df_addrs.этаж.replace('nan', np.nan, inplace=True)
     df_addrs.этаж.fillna(1, inplace=True)
@@ -177,12 +181,12 @@ def _apointments_processing(path_ro_xlsx: Path, sheet_name='ALL_Адрес'):
     df_apointments.dropna(subset=['items_in_parcel', ], inplace=True)
 
     # pdf file name for each sticker saving
-    df_apointments.loc[:, 'pdf_name'] = (df_apointments.item_id.astype(str) + '_'
-                                         + df_apointments.addr_id.astype(str) + '_'
-                                         + df_apointments.parcels.astype(str) + '_'
-                                         + df_apointments.items_total.astype(str)
-                                         + '.pdf'
-                                         )
+    df_apointments.loc[:, 'pdf_name'] = (
+        df_apointments.item_id.astype(str) + '_'
+        + df_apointments.addr_id.astype(str) + '_'
+        + df_apointments.parcels.astype(str) + '_'
+        + df_apointments.items_total.astype(str) + '_'
+    )
 
     return df_apointments
 

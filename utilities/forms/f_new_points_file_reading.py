@@ -58,6 +58,8 @@ def save_addrs_to_DB(id_companies, id_postservices, df_addrs):
     """
     # list_of_records = list()
     for row in df_addrs.itertuples():
+        df_addrs.at[row.Index, 'N'] = 'не визначено'  # for if row will be skiped
+
         surname, name, middle_name = ФИО_to_surname_name_middlename(row.ФИО)
         new_point_row = (
             id_companies,
@@ -74,6 +76,9 @@ def save_addrs_to_DB(id_companies, id_postservices, df_addrs):
             token=dict(name='city_token', value=row.CityID),
             handbook_field=dict(name='city_name', value=row.post_city_name),  # was 'row.город'
             table_in='cities')
+        if not(city_table_id and type(city_table_id)) == int:
+            continue   # no such city or many cities (if by index)  -  skip row!
+
         # step 2. Try to add Street code to table 'Streets' and get the Street's token table id
         street_table_id = add_row_to_handbook_nd_get_added_id(
             handbook_id=dict(name='id_streets', value=None),
@@ -82,6 +87,9 @@ def save_addrs_to_DB(id_companies, id_postservices, df_addrs):
             handbook_field=dict(name='street_name',
                                 value=row.post_street_name),   # was 'row.улица'
             table_in='streets')
+        if not(street_table_id):
+            continue   # no such city - skip row! many streets is valid here.
+
         # step 3. Try to add new row to 'receiver_postcervice_street'
         receiver_id = get_if_street_building_surname_combo_id(
             rps_receivers_id=None,
@@ -90,7 +98,7 @@ def save_addrs_to_DB(id_companies, id_postservices, df_addrs):
             building_to_check=row.дом,
             name_to_check=surname,
         )
-        if not receiver_id and street_table_id:
+        if not receiver_id and street_table_id:    # new receiver determined - save it )
             # add new receivers and get last_id
             work_d = dict(zip(fields_list, new_point_row))
             receiver_id = add_row_values_to_DB(
