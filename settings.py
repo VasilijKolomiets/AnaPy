@@ -80,6 +80,28 @@ state_params = dict(
     selected_street=dict(id_street=None, name=None),
 )
 
+
+tables_fields = {
+    'companies': ['id', 'is_active', 'company_name', 'short_name_latin', 'code_EDRPOU', 'phone']
+}
+
+widgets_table = {
+    'companies': {
+        "minsize": (600, 240),
+        "title": "companies",
+
+        # list of forms entries with their names:
+        "entries": {
+            # 'id': {'text': 'entry_1_name'},
+            # 'is_active': {'text': 'entry_2_name'},
+            'company_name': {'text': 'Назва Компанії', 'type': str},
+            'short_name_latin': {'text': 'Коротка назва латиницею', 'type': str},
+            'code_EDRPOU': {'text': 'Код ЄДРПОУ', 'type': int},
+            'phone': {'text': 'Контактний телефон', 'type': str}
+        },
+    }
+}
+
 """========= Meest =========
 
 https://wiki.meest-group.com/api/ua/v3.0/openAPI#/
@@ -108,7 +130,7 @@ https://wiki.meest-group.com/api/ua/v3.0/openAPI#/
              "insurance": 10.0,
              "quantity": 5,
              }
-            ],
+    ],
     "receiver": {
         "name": "Ромась Оксана",
         "phone": "+38050-449-3840",
@@ -118,7 +140,7 @@ https://wiki.meest-group.com/api/ua/v3.0/openAPI#/
         "flat": "1",
         "floor": 1,
         "service": "Door",
-            },
+    },
 
     "payType": "noncash",
 }
@@ -200,7 +222,7 @@ TODO: під час вибору вулиці (вже після вибору) �
      ??? перевірити, що буде при натисканні на <ESC>
 
 2022-01-27
-TODO: Нова Пошта !
+TODO: Нова Пошта!
 
 
 

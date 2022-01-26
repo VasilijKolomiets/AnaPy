@@ -17,18 +17,26 @@ import winsound
 
 import utilities.utils  # do not del this import !!
 
-from utilities.forms.f_devivery_points import f_delivery_point_add
+from utilities.forms.f_delivery_points import f_delivery_point_add
 from utilities.forms.f_new_points_file_reading import f_new_points_file_reading
 from utilities.forms.f_new_items_file_reading import f_new_items_file_reading
 from utilities.forms.f_new_items_appointts_file_reading import f_new_items_appointts_file_reading
 from utilities.forms.f_combobox_select import f_combobox_select
 from utilities.forms.f_create_tickets import f_create_tickets
 from utilities.forms.f_create_waybills_pdf import f_create_waybills_pdf
+from utilities.forms.easy_form import easy_form
 
-from settings import state_params, credentials
+from settings import state_params, credentials, widgets_table
 import ua_posts_api
 
 from model import select_fields_from_table
+"""
+def easy_form(
+        widget_dict: dict = dict(),
+        entered_data_processing=add_row_values_to_DB,  # by default, save new row data to DB table
+        params_tuple_for_partical: tuple = tuple()     # DB table name OR  DB table name & row ID
+) -> None:
+"""
 
 
 def f_client_select():
@@ -94,7 +102,7 @@ for i in range(0, 5):
 """
 
 
-def activate_Створити():
+def client_select():
     global mainmenu
     global state_params
     print('Створити')
@@ -125,14 +133,22 @@ if __name__ == '__main__':
     # sysmenu = tk.Menu(mainmenu, name='system', tearoff=0)
 
     env_params_menu = tk.Menu(mainmenu, tearoff=0)
-    env_params_menu.add_command(label="Клієнт", command=activate_Створити)
+    env_params_menu.add_command(label="Клієнт", command=client_select)
     env_params_menu.add_command(label="Поставка", command=f_contract_select)
-    env_params_menu.add_command(label="Перевізник", command=None)
 
     create_menu = tk.Menu(mainmenu, tearoff=0)
-    create_menu.add_command(label="... поставку")
     create_menu.add_command(label="... точку доставки",
-                            command=f_delivery_point_add)  # delivery_point_editing
+                            command=f_delivery_point_add)  # delivery_point_adding
+    create_menu.add_command(label="... поставку")
+    create_menu.add_command(
+        label="... Клієнта",
+        command=partial(
+            easy_form, widgets_table['companies'],
+            ('companies',)
+        )
+
+    )
+    create_menu.add_command(label="... Перевізника")
 
     import_menu = tk.Menu(mainmenu, tearoff=0)
     import_menu.add_command(
