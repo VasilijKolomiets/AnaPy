@@ -23,8 +23,10 @@ from utilities.forms.f_new_items_file_reading import f_new_items_file_reading
 from utilities.forms.f_new_items_appointts_file_reading import f_new_items_appointts_file_reading
 from utilities.forms.f_combobox_select import f_combobox_select
 from utilities.forms.f_create_tickets import f_create_tickets
+from utilities.forms.f_create_reestr import f_create_reestr
 from utilities.forms.f_create_waybills_pdf import f_create_waybills_pdf
 from utilities.forms.easy_form import easy_form
+from utilities.sql_base_utils import f_cities_refresh, f_streets_refresh
 
 from settings import state_params, credentials, widgets_table
 import ua_posts_api
@@ -42,8 +44,10 @@ def easy_form(
 def f_client_select():
 
     def processing(state_params, selected_data_row):
-        state_params['client']['id_companies'] = int(selected_data_row.split()[0])
-        state_params['client']['name'] = selected_data_row.split()[-1]
+        fields = selected_data_row.split()
+        state_params['client']['id_companies'] = int(fields[0])
+        state_params['client']['name'] = fields[-1]
+        state_params['client']['fullname'] = fields[1]
 
     combo_list_values = select_fields_from_table()
     f_combobox_select(
@@ -135,11 +139,24 @@ if __name__ == '__main__':
     env_params_menu = tk.Menu(mainmenu, tearoff=0)
     env_params_menu.add_command(label="Клієнт", command=client_select)
     env_params_menu.add_command(label="Поставка", command=f_contract_select)
+    env_params_menu.add_separator()
+    env_params_menu.add_command(
+        label="Завантажити токени міст",
+        command=partial(f_cities_refresh, state_params)
+    )
+    env_params_menu.add_command(label="Завантажити токени вулиць", command=f_streets_refresh)
 
     create_menu = tk.Menu(mainmenu, tearoff=0)
     create_menu.add_command(label="... точку доставки",
                             command=f_delivery_point_add)  # delivery_point_adding
-    create_menu.add_command(label="... поставку")
+    create_menu.add_command(
+        label="... поставку",
+        command=partial(
+            easy_form, widgets_table['delivery_contracts'],
+            ('delivery_contracts',)
+        )
+    )
+
     create_menu.add_command(
         label="... Клієнта",
         command=partial(
@@ -184,7 +201,7 @@ if __name__ == '__main__':
     )
     create_tickets_menu.add_command(
         label="... створити Реєстр",
-        command=None
+        command=partial(f_create_reestr, postman, state_params)
     )
 
     exit_menu = tk.Menu(mainmenu, tearoff=0)

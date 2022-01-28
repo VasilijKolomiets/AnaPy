@@ -12,7 +12,8 @@ import json
 
 from pprint import pprint
 
-from datetime import datetime as dt, timedelta, date
+from datetime import datetime as dt
+from datetime import timedelta, date
 
 from settings import credentials
 
@@ -20,7 +21,6 @@ from settings import credentials
 def tomorrow() -> str:
     today = date.today()
     tomorrow = today + timedelta(days=1)
-    print(tomorrow.strftime('%d.%m.%Y'))
     return tomorrow.strftime('%d.%m.%Y')
 
 
@@ -43,7 +43,8 @@ class PostServiceLight(abc.ABC):
                                    'branch_id',
                                    ])
     Parcels = namedtuple('Parcels', ['create', 'get_all_on_date', 'delete_by_id'])
-    Registers = namedtuple('Registers', ['create_pick_up', 'edit_pick_up', 'delete_pick_up'])
+    Registers = namedtuple('Registers', ['create_pick_up',
+                           'edit_pick_up', 'delete_pick_up', 'get_all_on_date'])
     Print = namedtuple('Print', ['sticker100', 'sticker100_A4', 'registers', 'declarations'])
     Tracking = namedtuple('Tracking', ['method', ])
 
@@ -81,9 +82,10 @@ class PostServiceLight(abc.ABC):
         )
 
         self.register = self.__class__.Registers(
-            create_pick_up=None,
+            create_pick_up=self._create_pickup_register,
             edit_pick_up=None,
             delete_pick_up=None,
+            get_all_on_date=self._get_registers_list_on_date
         )
 
         response = self._do_auth()
@@ -219,6 +221,7 @@ class Postman(PostServiceLight):  # metaclass=Singleton
             "contractID": "a3df71d8-5e17-11ea-80c6-000c29800ae7",
             "receiverPay": False,
             # "COD": 600,
+            "sendingDate": kwargs.get('sendingDate', tomorrow()),
             "notation": ".......",
             "sender": {
                 "phone": kwargs.get('sender_phone', "+38050-421-1558"),
@@ -787,15 +790,17 @@ class Postman(PostServiceLight):  # metaclass=Singleton
                                     timeFrom="15:00",
                                     timeTo="18:00"),
                                 sender=False,
-                                parcels_IDs_list: list = []):
+                                parcels_tokens_list: list = []):
         """
 
         """
         json_body = {
             "contractID": self.contract_id,
             "payType": "noncash",
+            "receiverPay": "false",
             "expectedPickUpDate": expected_pick_date,
             "sender": sender if sender else self.sender,
+            "parcelsItems": [{"parcelId": token} for token in parcels_tokens_list]
 
         }
         response = requests.post(
@@ -807,6 +812,42 @@ class Postman(PostServiceLight):  # metaclass=Singleton
         content_result = response.content   # not content['result']  - bc of stream result in
 
         # return response.status_code, content_result
+        return response.status_code, content_result
+
+    def _get_registers_list_on_date(self, date: str = '13.12.2021'):
+        """
+        Get registers list opened in date.
+
+        https://api.meest.com/v3.0/openAPI/print/register/25670e42-8045-11ec-80e4-000c29800ae7/pdf
+
+        :param this: DESCRIPTION, defaults to 'parcelsList'
+        :param date: DESCRIPTION, defaults to ''
+        :type date: str, optional
+        :return: DESCRIPTION
+        :rtype: TYPE
+
+         {
+          "status": "ok",
+          "info": {
+            "fieldName": "",
+            "message": "",
+            "messageDetails": ""
+          },
+          "result": [
+            {
+              "registerID": "42aa64ae-81d2-11e9-80e0-1c98ec135261",
+              "registerType": "registerPickUP",
+              "parcelQty": 2
+            }
+          ]
+        }
+        """
+        response = requests.get(
+            url="/".join([self.url, 'registersList', date]),
+            headers=self.headers,
+        )
+        self.auth_response_code = response.status_code
+        content_result = json.loads(response.content)['result']
         return response.status_code, content_result
 
         #
@@ -848,14 +889,9 @@ if __name__ == "__main__":
 #
 # =============================================================================
 
-# =============================================================================
-#     code, pdf_bytes = postman.to_print.sticker100_A4(
-#         parcels_IDs_list=['04d1b81e-5818-11ec-80e4-000c29800ae7',
-#                           'f74bc8e2-5817-11ec-80e4-000c29800ae7',
-#                           '04d1b82a-5818-11ec-80e4-000c29800ae7',
-#                           '17405cd4-5818-11ec-80e4-000c29800ae7',
-#                           ])
-# =============================================================================
+    code, pdf_bytes = postman.to_print.sticker100_A4(
+        parcels_IDs_list=['8dc2992a-7f8a-11ec-80e4-000c29800ae7',
+                          ])
 
 # =============================================================================
 #     print(code, pdf_bytes)
@@ -883,18 +919,22 @@ if __name__ == "__main__":
 #     pprint(z)
 # =============================================================================
 
-    z = postman.search.by_zip_city_id('08703')  # Полтава
+    z = postman.search.by_zip_city_id('32302')  # Індекс
     print('8', end="")
     pprint(z)
 
     city_id = z[1][0]['cityID']
     z = postman.search.address_id(
         city_id=city_id,
-        streetname="Київськ"
+        streetname="Добрянс"
     )
     print('9:  -> ', end="")
     pprint(z)
 
-    z = postman.search.by_ukr_name_city_id(city_descr="Нова Каховка")
+    z = postman.search.by_ukr_name_city_id(city_descr="Лиманка")
+    print('10', end="")
+    pprint(z)
+
+    code, z = postman.register.get_all_on_date(date="28.01.2022")
     print('10', end="")
     pprint(z)

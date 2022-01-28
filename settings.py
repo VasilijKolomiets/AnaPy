@@ -4,6 +4,8 @@ import mysql.connector as connector  # mysql.connector.python
 import sys
 from pathlib import Path
 
+from datetime import date
+
 global temp_cursor
 
 
@@ -73,7 +75,7 @@ credentials = {
 
 
 state_params = dict(
-    client=dict(id_companies=None, name=None),
+    client=dict(id_companies=None, name=None, fullname=None),
     delivery_contract=dict(id_delivery_contract=None, name=None),
     post_service=dict(id_postcervices=None, name=None),
     statusbar=None,
@@ -82,8 +84,49 @@ state_params = dict(
 
 
 tables_fields = {
-    'companies': ['id', 'is_active', 'company_name', 'short_name_latin', 'code_EDRPOU', 'phone']
+    'companies': ['id', 'is_active', 'company_name', 'short_name_latin', 'code_EDRPOU', 'phone'],
+
+    'directory_meest_cities': [
+        'id_directory_meest_cities',
+        'n_ua',     # Назва населеного пункту українською
+        'n_ru',      # Назва населеного пункту російською
+        't_ua',     # Тип населеного пункту українською
+        'city_id',  # Унікальний ідентифікатор населеного пункту
+        'kt',       # КОАТУУ
+        'reg',       # Назва области
+        'dis',      # Назва району
+        'd_id',     # Унікальний ідентифікатор району
+    ],
+
+    'receivers': [
+        'id_receivers',
+        'id_companies',
+        'surname', 'name', 'middle_name',
+        'phone',
+        'city', 'street',
+        'building', 'floor', 'flat',
+        'comment'
+        'date_in'
+        'branch',
+        'is_active',
+        'post_ZIP',
+    ],
+
+    'delivery_contracts': [
+        'id_delivery_contract',
+        'postservice_id',
+        'id_companies',
+        'name',
+        'bank_account',
+        'subcontract_nnumber',
+        'sending_date',
+        'payer',
+        'finished',
+        'is_active',
+    ],
+
 }
+
 
 widgets_table = {
     'companies': {
@@ -99,7 +142,52 @@ widgets_table = {
             'code_EDRPOU': {'text': 'Код ЄДРПОУ', 'type': int},
             'phone': {'text': 'Контактний телефон', 'type': str}
         },
-    }
+    },
+
+    'receivers': {
+        "minsize": (600, 500),
+        "title": "receivers",
+
+        # list of forms entries with their names:
+        "entries": {
+
+            'surname': {'text': 'Прізвище', 'type': str},
+            'name': {'text': "Ім'я", 'type': str},
+            'middle_name': {'text': 'по батькові', 'type': str},
+            'phone': {'text': 'Телефон з кодом', 'type': str},
+            'city': {'text': 'Місто/Селище', 'type': str},
+            'street': {'text': 'Вулиця/проспект/...', 'type': str},
+            'building': {'text': 'Будинок', 'type': str},
+            'floor': {'text': 'Поверх', 'type': int},
+            'flat': {'text': 'Квартира', 'type': str},
+            'comment': {'text': 'Коментар', 'type': str},
+            # 'date_in'  datetime.date.fromisoformat
+            'branch': {'text': 'Підрозділ/відділення', 'type': str},
+            # 'is_active',
+            'post_ZIP': {'text': 'Поштовий індекс', 'type': str},
+        },
+    },
+
+
+    'delivery_contracts': {
+        "minsize": (600, 300),
+        "title": "delivery_contracts",
+        # list of forms entries with their names:
+        "entries": {
+            'name': {'text': 'Назва контракту:', 'type': str},
+            'bank_account': {'text': 'Номер заказу:', 'type': str},
+            'subcontract_nnumber': {'text': 'Номер допконтракту (якщо є)', 'type': str},
+            'sending_date': {'text': 'Дата відправки. Формат 2022-02-22',
+                             'type': date.fromisoformat
+                             },
+            'payer': {'text': "Платник: 'Sender'/'Receiver'", 'type': str},
+            # 'finished': {'text': 'ЗавершенлЖ 0/1', 'type': bool},
+        },
+    },
+
+
+
+
 }
 
 """========= Meest =========
@@ -221,7 +309,11 @@ TODO: під час опрацювання довготермінових про
 TODO: під час вибору вулиці (вже після вибору) натискання на відміну має наново запускати вибір
      ??? перевірити, що буде при натисканні на <ESC>
 
+
 2022-01-27
+TODO: Додати назву Клієнта до поля "ПІБ" одержувача на точці
+
+2022-01-31
 TODO: Нова Пошта!
 
 

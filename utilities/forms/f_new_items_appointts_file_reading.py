@@ -40,10 +40,10 @@ def calculate_weight_height_cost_volume1(
     packs_number: int,
     items_in_parcel: int,
 ):
-    parcell_weight = round(item_weight * items_in_parcel, 2)
-    parcell_height = int(items_in_parcel * high_x_100 / 100)
-    parcell_cost = round(item_cost * items_in_parcel, 2)
-    parcell_volume = parcell_height * length * width / 100 / 100 / 100  # metr 3
+    parcell_weight = round(max(item_weight * items_in_parcel, 0.3), 2)
+    parcell_height = max(int(items_in_parcel * high_x_100 / 100 / 10), 1)    # mm !
+    parcell_cost = round(max(item_cost * items_in_parcel, 300), 2)
+    parcell_volume = (parcell_height * length * width) / 100 / 100 / 100  # metr 3
     return parcell_weight, parcell_height, parcell_cost, parcell_volume
 
 

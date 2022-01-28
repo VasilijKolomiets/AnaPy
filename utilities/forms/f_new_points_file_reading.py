@@ -226,7 +226,7 @@ def f_new_points_file_reading(postman, state_pars: dict):
         status_text_is = state_pars['statusbar'].get()
         state_pars['statusbar'].set(status_text_is + '... почекайте  ...')
 
-        df_addrs = addresses_processing(xlsx_file_name)
+        df_addrs = addresses_processing(xlsx_file_name, state_pars)
 
         df_addrs = receive_addressIDs_by_api(postman, df_addrs)
         # restore old status text:
@@ -243,7 +243,9 @@ def f_new_points_file_reading(postman, state_pars: dict):
         state_params['post_service']['id_postcervices'],
         df_addrs)
     df_addrs.to_excel('_'.join(['zipCodes', state_pars['client']['name'], 'with_ids', '.xlsx']),
-                      engine='xlsxwriter')
+                      engine='xlsxwriter',
+                      index=False,
+                      )
 
     select_root.mainloop()
 

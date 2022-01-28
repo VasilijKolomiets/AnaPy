@@ -340,6 +340,21 @@ def create_parcels_by_api(postman: ua_posts_api.Postman, state_pars: dict):
         FROM `postman`.`receivers`;
     """
 
+    """
+        SELECT `delivery_contracts`.`id_delivery_contract`,
+            `delivery_contracts`.`postservice_id`,
+            `delivery_contracts`.`id_companies`,
+            `delivery_contracts`.`name`,
+            `delivery_contracts`.`bank_account`,
+            `delivery_contracts`.`subcontract_nnumber`,
+            `delivery_contracts`.`sending_date`,
+            `delivery_contracts`.`payer`,
+            `delivery_contracts`.`finished`,
+            `delivery_contracts`.`is_active`
+        FROM `postman`.`delivery_contracts`;
+
+    """
+
     """  Dictionary for API request example:
 
                 json={
@@ -413,10 +428,16 @@ def create_parcels_by_api(postman: ua_posts_api.Postman, state_pars: dict):
         where_condition=F'contract_waybills.delivery_contracts_id = {curr_contracts_id}'
     )
 
+    sending_date = select_fields_from_table(
+        fields="sending_date",
+        table="delivery_contracts",
+        where_condition=F"id_delivery_contract={curr_contracts_id}"
+    )[0][0].strftime("%d.%m.%Y")
+
     for waybill_row in waybills_for_contract:
         id_waybills, waybills_receivers_id, waybills_rps_id, total_weight = waybill_row
 
-        kwargs = dict(placesItems=[], receiver=None, weight=total_weight)
+        kwargs = dict(placesItems=[], receiver=None, weight=total_weight, sendingDate=sending_date)
 
         parcells_in_waybill = get_ordered_parcells_by_waybill(id_waybills)
         parcells_num = len(parcells_in_waybill)  # !!! fucked MeestExpress formula
@@ -478,8 +499,13 @@ def create_parcels_by_api(postman: ua_posts_api.Postman, state_pars: dict):
             where_condition=F' id_receivers = {waybills_receivers_id}'
         )[0]
         # Step 3/3. Form the dict for query:
+        if state_pars['post_service']['id_postcervices'] == 1:  # Meest #TODO: OOP
+            middle_name_ = middle_name + "|" + state_pars['client']['fullname']
+        else:
+            middle_name_ = middle_name
+
         kwargs["receiver"] = {
-            "name": ' '.join([surname, name, middle_name]),
+            "name": ' '.join([surname, name, middle_name_]),
             "phone": phone,
             "countryID": "c35b6195-4ea3-11de-8591-001d600938f8",
 
@@ -581,6 +607,34 @@ def update_one(tablename: str, fields_name: list, values: tuple):
 
     # SQL command executing
     _cursor.execute(sql_command, values)
+
+    cnx.commit()
+    cnx.close()
+
+
+def update_meest_streets():
+    # TODO:  have to UPDATE by token - not add!!!
+    # TODO: compare row by row and UPDATE differenced
+    sql_command = """
+        INSERT INTO city_names_tokens_by_posts     (`city_names_tokens_by_posts`.`city_tokens_services_id`,
+            `city_names_tokens_by_posts`.`city_tokens_services_city_id`,
+            `city_names_tokens_by_posts`.`city_tokens_city_detailed_name`,
+            `city_names_tokens_by_posts`.`city_tokens_token`,
+            `city_names_tokens_by_posts`.`city_tokens_city_name_ua`,
+            `city_names_tokens_by_posts`.`city_tokens_koatuu`) (SELECT
+            1 AS services_id,
+            id_directory_meest_cities AS services_city_id,
+            CONCAT_WS(' | ', n_ua, t_ua, reg, dis) AS city_detailed_name,
+            city_id,
+            n_ua AS city_name_ua,
+            kt AS koatuu
+        FROM
+            postman.directory_meest_cities);
+    """
+    cnx = from_server_connect()
+    _cursor = cnx.cursor()   # used inside f-function
+    # SQL command executing
+    # _cursor.execute(sql_command)
 
     cnx.commit()
     cnx.close()
